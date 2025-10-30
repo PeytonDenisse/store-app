@@ -22,12 +22,12 @@ jobs:
         run: docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
 
       - name: Build Docker Image
-        run: docker build -t hermosa0404/store-app:${{ github.sha }} .
+        run: docker build -t peytondenisse/store-app:${{ github.sha }} .
 
       - name: Tag Latest
-        run: docker tag hermosa0404/store-app:${{ github.sha }} hermosa0404/store-app:latest
+        run: docker tag peytondenisse/store-app:${{ github.sha }} peytondenisse/store-app:latest
 
       - name: Push Docker Image
         run: |
-          docker push hermosa0404/store-app:${{ github.sha }}
-          docker push hermosa0404/store-app:latest
+          docker push peytondenisse/store-app:${{ github.sha }}
+          docker push peytondenisse/store-app:latest
